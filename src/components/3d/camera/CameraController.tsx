@@ -138,7 +138,7 @@ export const CameraController: React.FC = () => {
         currentLookAt.current.lerp(targetLookAt.current, delta * 3.5)
         camera.lookAt(currentLookAt.current)
 
-        if (camera.position.distanceTo(targetPos.current) < 0.25) {
+        if (camera.position.distanceTo(targetPos.current) < 0.5) {
           isTransitioningToOverview.current = false
         }
       }

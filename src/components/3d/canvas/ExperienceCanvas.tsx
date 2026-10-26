@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react'
+import * as THREE from 'three'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Stars } from '@react-three/drei'
 import { useExperienceStore } from '@/store/useExperienceStore'
@@ -80,8 +81,8 @@ export const ExperienceCanvas: React.FC = () => {
             enableDamping={true}
             dampingFactor={0.06}
             touches={{
-              ONE: 1, // TOUCH_ROTATE (1 ngón vuốt xoay 360 độ)
-              TWO: 2, // TOUCH_DOLLY_PAN (2 ngón nhúm để zoom in/out)
+              ONE: THREE.TOUCH.ROTATE, // 0: 1 ngón chạm vuốt xoay 360 độ quanh dải ngân hà
+              TWO: THREE.TOUCH.DOLLY_PAN, // 2: 2 ngón nhúm phóng to / thu nhỏ
             }}
           />
         </Suspense>
